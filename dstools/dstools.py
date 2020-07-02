@@ -117,7 +117,7 @@ class dstools(object):
         {all_param} 
 
     Returns:
-        {rtype}
+        {rtype}:
         
     Raises:
         {raises}
@@ -236,11 +236,13 @@ class dstools(object):
         {all_param}
 
     Returns:
-        {return_type}
+        {return_type}:
             
     Raises:
         {raises}
     """
+                if replace_function:
+                    pass
         
                 final += f"    \"\"\"{new_doc}\"\"\""
         return final
