@@ -9,15 +9,15 @@
  DSTools makes generating docstrings very easy.
  ```python
  import dstools
- tool = dstools() #initialize
+ tool = dstools.dstools() #initialize
  
  def func(x : int, y : str = 'test!') -> list:
     """Example function"""
     return [x, y]
      
-  tool.generateDocstring(func, replace_function=True)
+  tool.generateDocstring(func, replace_function=True) #generate a docstring. Takes a callable as argument
   
-  #output:
+  #output (str). This was 100% generated using the above method:
   
   def func(x : int, y : str = 'test!') -> list:
     """
@@ -45,8 +45,8 @@
  #Generating multiple docstrings 
  from dstools import dstools
  
- tool = dstools(filename="test.py")
- tool.generateDocstrings(output="output.py")
+ tool = dstools(filename="test.py") #by default filename will be the current file.
+ tool.generateDocstrings(output="output.py") #saves the output to a file called output.py
  
  #boom, it's that easy!
  ```
