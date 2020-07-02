@@ -1,11 +1,14 @@
 from dstools import dstools
-import sys
+
+"""
+Example of dstools
+"""
 
 tool = dstools()
 
-def func(x : int, y : str = "some")  -> int:
-    """test
-    ai
+def test_func(x : int, y : str = "some")  -> int:
+    """
+    test
     """
     try:
         1+1
@@ -19,11 +22,5 @@ def func(x : int, y : str = "some")  -> int:
 
 
 
-result = tool.generateDocstrings()
+result = tool.generateDocstring(test_func, replace_function=True)
 
-#print(result)
-
-print(tool.getDocstring(func))
-
-
-#print(result)
