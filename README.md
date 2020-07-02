@@ -37,3 +37,16 @@
     return [x, y]
    
  ```
+ 
+ You can also replace all the functions in a file.
+ By default the file will be the current file, if you wish to change it you need to pass in a filename argument in the constructor method.
+ 
+ ```python
+ #Generating multiple docstrings 
+ from dstools import dstools
+ 
+ tool = dstools(filename="test.py")
+ tool.generateDocstrings(output="output.py")
+ 
+ #boom, it's that easy!
+ ```
