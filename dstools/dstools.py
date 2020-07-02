@@ -197,13 +197,14 @@ class dstools(object):
             result[arg] = _list
         return (result, return_type)
     
-    def generateDocstrings(self, replace_function=False):
+    def generateDocstrings(self, replace_function=False, to_file=False):
         self.funcs = self.getFuncs()
         final = ""
 
 
         for func in self.funcs.body:
             if isinstance(func, ast.FunctionDef):
+                previous_doc = ast.get_docstring(func)
                 src = astunparse.unparse(ast.parse(func))
                 
                 data, return_type = self._get_args(src)
@@ -242,8 +243,14 @@ class dstools(object):
         {raises}
     """
                 if replace_function:
-                    pass
+                    final += src.replace(previous_doc, new_doc)
         
                 final += f"    \"\"\"{new_doc}\"\"\""
+        if to_file:
+            try:
+                with open(to_file, "a") as f:
+                    f.write(to_file)
+            except FileNotFoundError:
+                raise FileNotFoundError(f"File {to_file} was not found!")
         return final
 

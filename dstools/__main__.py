@@ -23,4 +23,3 @@ def test_func(x : int, y : str = "some")  -> int:
 
 
 result = tool.generateDocstring(test_func, replace_function=True)
-
