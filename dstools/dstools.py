@@ -3,7 +3,6 @@ import sys
 import typing
 import ast
 import astunparse
-import re
 from collections.abc import Iterable
 
 
@@ -18,11 +17,6 @@ class dstools(object):
     def __str__(self) -> str:
         """Returns a string representation of -self-"""
         return "{}".format(self)
-
-    def __repr__(self) -> str:
-        """Returns a redirect to __str__"""
-        return self.__str__()
-
 
 
     def getFuncs(self):
@@ -249,7 +243,7 @@ class dstools(object):
         if to_file:
             try:
                 with open(to_file, "a") as f:
-                    f.write(to_file)
+                    f.write(final)
             except FileNotFoundError:
                 raise FileNotFoundError(f"File {to_file} was not found!")
         return final
