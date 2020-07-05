@@ -15,9 +15,8 @@
     """Example function"""
     return [x, y]
      
-  tool.generateDocstring(func, replace_function=True) #generate a docstring. Takes a callable as argument
-  
-  #output (str). This was 100% generated using the above method:
+  result tool.generateDocstring(func, replace_function=True) #generate a docstring. Takes a callable as argument
+  print(result) #output (str). This was 100% generated using the above method:
   
   def func(x : int, y : str = 'test!') -> list:
     """
