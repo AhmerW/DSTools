@@ -10,14 +10,16 @@
  ```python
  import dstools
  tool = dstools.dstools() #initialize
- 
- def func(x : int, y : str = 'test!') -> list:
+  
+  #Original function:
+  def func(x : int, y : str = 'test!') -> list:
     """Example function"""
     return [x, y]
      
   result = tool.generateDocstring(func, replace_function=True) #generate a docstring. Takes a callable as argument
   print(result) #output (str). This was 100% generated using the above method:
   
+  #Function after generating a docstring and modifying the original:
   def func(x : int, y : str = 'test!') -> list:
     """
     Function func
